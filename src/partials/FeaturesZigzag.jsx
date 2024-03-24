@@ -35,8 +35,8 @@ function FeaturesZigzag() {
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
                   <h3 className="h3 mb-3">Scheduled water changes</h3>
                   <p className="text-xl text-gray-400 mb-4">
-                    One of the main facts to a successful saltwater aquarium is
-                    frequent regularly scheduled water changes.
+                    One of the main factors to a successful aquarium is
+                    regularly scheduled water changes.
                   </p>
                   <ul className="text-lg text-gray-400 -mb-2">
                     <li className="flex items-center mb-2">
@@ -70,7 +70,10 @@ function FeaturesZigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Replace old water with premium salt water</span>
+                      <span>
+                        Replace old water with fresh filtered water and premium
+                        salts for saltwater aquariums
+                      </span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -80,7 +83,7 @@ function FeaturesZigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Change filtration media</span>
+                      <span>Change or clean filtration media</span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -120,9 +123,9 @@ function FeaturesZigzag() {
                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
                   <h3 className="h3 mb-3">Parameter Testing</h3>
                   <p className="text-xl text-gray-400 mb-4">
-                    Having the correct parameters, specifically the 4 big ones
-                    (Salinity, Alk, Calc, Mag), can make the difference between
-                    a thriving aquarium and a dead one.
+                    Having the correct parameters, specifically the 5 big ones
+                    (Salinity, Alk, Calc, Mag, Nitrates), can make the
+                    difference between a thriving aquarium and a dead one.
                   </p>
                   <ul className="text-lg text-gray-400 -mb-2">
                     <li className="flex items-center mb-2">
@@ -134,7 +137,8 @@ function FeaturesZigzag() {
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
                       <span>
-                        Check the 4 major parameters (Salinity, Alk, Calc, Mag)
+                        Check the 5 major parameters (Salinity, Alk, Calc, Mag,
+                        Nitrates)
                       </span>
                     </li>
                     <li className="flex items-center mb-2">
@@ -146,8 +150,8 @@ function FeaturesZigzag() {
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
                       <span>
-                        Check other less frequently checked parameters if needed
-                        (i.e. Nitrate, Phosphates, Ammonia, etc.)
+                        Check other less frequently checked parameters as needed
+                        (i.e. Phosphates, Ammonia, etc.)
                       </span>
                     </li>
                     <li className="flex items-center">
@@ -194,8 +198,9 @@ function FeaturesZigzag() {
                   <p className="text-xl text-gray-400 mb-4">
                     We will take the time to inspect your livestock and
                     equipment to ensure everything is in good health and working
-                    order. If needed we can frag overgrown corals to keep your
-                    tank looking great and ensure the health of your corals.
+                    order. If needed we can frag overgrown corals or plants to
+                    keep your tank looking great and ensure the health of your
+                    corals and plants.
                   </p>
                   <ul className="text-lg text-gray-400 -mb-2">
                     <li className="flex items-center mb-2">
@@ -216,7 +221,7 @@ function FeaturesZigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Frag overgrown corals</span>
+                      <span>Frag overgrown corals and plants</span>
                     </li>
                   </ul>
                 </div>
