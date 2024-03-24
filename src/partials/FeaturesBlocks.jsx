@@ -1,10 +1,8 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const itemsContainerCSS =
-  "max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 items-start md:max-w-2xl lg:max-w-none";
-const circleCSS =
-  "w-16 h-16 mb-4 bg-purple-600 rounded-full text-lg text-gray-400 text-center flex items-center justify-center";
-const svgCSS = "w-8 h-8";
+  'max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 items-start md:max-w-2xl lg:max-w-none';
 
 function FeatureBlock({ iconData, title, description }) {
   return (
@@ -73,3 +71,9 @@ function FeaturesBlocks() {
 }
 
 export default FeaturesBlocks;
+
+FeatureBlock.propTypes = {
+  iconData: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};

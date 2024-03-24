@@ -5,6 +5,7 @@
   - [Project setup](#project-setup)
     - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
     - [Compiles and minifies for production](#compiles-and-minifies-for-production)
+    - [Perform Lint](#perform-lint)
     - [Customize configuration](#customize-configuration)
 - [Credits](#credits)
 
@@ -25,6 +26,11 @@ pnpm dev
 #### Compiles and minifies for production
 ```
 pnpm build
+```
+
+#### Perform Lint
+```
+pnpm lint
 ```
 
 #### Customize configuration
