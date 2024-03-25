@@ -1,4 +1,6 @@
-module.exports = {
+import tailwindForms from '@tailwindcss/forms';
+
+export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -66,5 +68,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [tailwindForms],
 };

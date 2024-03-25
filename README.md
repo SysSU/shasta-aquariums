@@ -6,6 +6,7 @@
     - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
     - [Compiles and minifies for production](#compiles-and-minifies-for-production)
     - [Perform Lint](#perform-lint)
+    - [Env Variables](#env-variables)
     - [Customize configuration](#customize-configuration)
 - [Credits](#credits)
 
@@ -31,6 +32,12 @@ pnpm build
 #### Perform Lint
 ```
 pnpm lint
+```
+
+#### Env Variables
+```bash
+  VITE_MAILTRAP_TOKEN=<TokenHere> # https://mailtrap.io/ token used for sending consult submissions
+  VITE_MAILTRAP_ENDPOINT=https://send.api.mailtrap.io/ #https://mailtrap.io/ endpoint used for sending consult submissions, default is 'https://send.api.mailtrap.io/'
 ```
 
 #### Customize configuration
