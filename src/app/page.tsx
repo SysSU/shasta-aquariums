@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import { usePathname } from 'next/navigation';
@@ -10,7 +9,6 @@ import PageIllustration from '@/components/PageIllustration';
 import HeroHome from '@/components/HeroHome';
 import FeaturesBlocks from '@/components/FeaturesBlocks';
 import FeaturesZigZag from '@/components/FeaturesZigzag';
-import Testimonials from '@/components/Testimonials';
 import ConsultBlock from '@/components/ConsultBlock';
 import Banner from '@/components/Banner';
 
