@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import LogoImg from '../images/logo.png';
+import Link from 'next/link';
+import Image from 'next/image';
+import LogoImg from '../../public/logo.png';
 
 function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -41,8 +42,8 @@ function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* Logo */}
-            <Link to="/" className="block" aria-label="Cruip">
-              <img src={LogoImg} alt="Cruip" width="200" />
+            <Link href="/" className="block" aria-label="ShastaAquariums.com">
+              <Image src={LogoImg} alt="ShastaAquariums.com" width="200" />
             </Link>
           </div>
         </div>

@@ -1,4 +1,5 @@
-import HeroImage from '../images/hero-image.jpg';
+import HeroImage from '../../public/hero-image.jpg';
+import Image from 'next/image';
 
 function HeroHome() {
   return (
@@ -83,7 +84,7 @@ function HeroHome() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <img
+              <Image
                 className="mx-auto"
                 src={HeroImage}
                 width="1024"

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const itemsContainerCSS =
   'max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 items-start md:max-w-2xl lg:max-w-none';
@@ -71,9 +70,3 @@ function FeaturesBlocks() {
 }
 
 export default FeaturesBlocks;
-
-FeatureBlock.propTypes = {
-  iconData: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};

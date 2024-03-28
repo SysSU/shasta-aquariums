@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 const socialLinkData = [
   {
@@ -31,7 +30,7 @@ function SocialLink({ href, iconData, label }) {
   return (
     <li className="ml-1">
       <Link
-        to={href}
+        href={href}
         className="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
         aria-label={label}
       >
@@ -82,9 +81,3 @@ function Footer() {
 }
 
 export default Footer;
-
-SocialLink.propTypes = {
-  href: PropTypes.string.isRequired,
-  iconData: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
-  label: PropTypes.string.isRequired,
-};

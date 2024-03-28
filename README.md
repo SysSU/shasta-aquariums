@@ -1,49 +1,45 @@
-## Table of contents
+This is the source code for [ShastaAquariums.com](https://shastaaquariums.com/).
 
-- [Table of contents](#table-of-contents)
-- [Usage](#usage)
-  - [Project setup](#project-setup)
-    - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
-    - [Compiles and minifies for production](#compiles-and-minifies-for-production)
-    - [Perform Lint](#perform-lint)
-    - [Env Variables](#env-variables)
-    - [Customize configuration](#customize-configuration)
-- [Credits](#credits)
+- [Project setup](#project-setup)
+  - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
+  - [Perform Lint](#perform-lint)
+  - [Env Variables](#env-variables)
+- [Deploy on Vercel](#deploy-on-vercel)
+- [Learn More about Next.js](#learn-more-about-nextjs)
 
-## Usage
 
-This project was bootstrapped with [Vite](https://vitejs.dev/).
-
-### Project setup
+# Project setup
 ```
 pnpm install
 ```
 
-#### Compiles and hot-reloads for development
+## Compiles and hot-reloads for development
 ```
 pnpm dev
 ```
 
-#### Compiles and minifies for production
-```
-pnpm build
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-#### Perform Lint
+## Perform Lint
 ```
 pnpm lint
 ```
 
-#### Env Variables
+## Env Variables
 ```bash
   VITE_MAILTRAP_TOKEN=<TokenHere> # https://mailtrap.io/ token used for sending consult submissions
   VITE_MAILTRAP_ENDPOINT=https://send.api.mailtrap.io/ #https://mailtrap.io/ endpoint used for sending consult submissions, default is 'https://send.api.mailtrap.io/'
 ```
 
-#### Customize configuration
-See [Configuration Reference](https://vitejs.dev/guide/).
+# Deploy on Vercel
 
-## Credits
+The easiest way to deploy this app is to use the [Vercel Platform](https://vercel.com/) .
 
-- [Nucleo](https://nucleoapp.com/)
-- ❤️ [Cruip.com](https://cruip.com)
+# Learn More about Next.js
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!

@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
 
-import FeatImage01 from '../images/features-03-image-01.jpg';
-import FeatImage02 from '../images/features-03-image-02.jpg';
-import FeatImage03 from '../images/features-03-image-03.jpg';
-import FeatImage04 from '../images/features-03-image-04.jpg';
+import FeatImage01 from '../../public/features-03-image-01.jpg';
+import FeatImage02 from '../../public/features-03-image-02.jpg';
+import FeatImage03 from '../../public/features-03-image-03.jpg';
+import FeatImage04 from '../../public/features-03-image-04.jpg';
 
 function FeaturesZigzag() {
   return (
@@ -19,7 +20,7 @@ function FeaturesZigzag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <img
+                <Image
                   className="max-w-full mx-auto md:max-w-none h-auto"
                   src={FeatImage01}
                   width="540"
@@ -107,7 +108,7 @@ function FeaturesZigzag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl"
                 data-aos="fade-up"
               >
-                <img
+                <Image
                   className="max-w-full mx-auto md:max-w-none h-auto"
                   src={FeatImage02}
                   width="540"
@@ -178,7 +179,7 @@ function FeaturesZigzag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <img
+                <Image
                   className="max-w-full mx-auto md:max-w-none h-auto"
                   src={FeatImage03}
                   width="540"
@@ -234,7 +235,7 @@ function FeaturesZigzag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl"
                 data-aos="fade-up"
               >
-                <img
+                <Image
                   className="max-w-full mx-auto md:max-w-none h-auto"
                   src={FeatImage04}
                   width="540"

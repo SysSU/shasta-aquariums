@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import BackgroundImg from '../images/Consult-Background-Img.png';
+import BackgroundImg from '../../public/Consult-Background-Img.png';
+import Image from 'next/image';
 
 function ConsultBlock() {
   function handleSubmit(e) {
@@ -8,7 +9,7 @@ function ConsultBlock() {
     const phone = e.target.elements.phone.value;
     const data = { name, phone };
     setSubmitStatus('Pending');
-    fetch('/api/setup-consult', { method: 'POST', body: JSON.stringify(data) })
+    fetch('/api/setupConsult', { method: 'POST', body: JSON.stringify(data) })
       .then((res) => res.json())
       .then((res) => {
         if (res.results === 'Success') {
@@ -34,7 +35,7 @@ function ConsultBlock() {
             className="absolute -right-20 -top-20 -ml-40 pointer-events-none -rotate-12"
             aria-hidden="true"
           >
-            <img className="w-72" src={BackgroundImg} alt="" />
+            <Image className="w-72" src={BackgroundImg} alt="" />
           </div>
 
           <div className="relative flex flex-col lg:flex-row justify-between items-center">
