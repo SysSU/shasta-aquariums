@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState } from 'react';
-import BackgroundImg from '../../public/Consult-Background-Img.png';
+import BackgroundImg from '@/public/Consult-Background-Img.png';
 import Image from 'next/image';
 
 function ConsultBlock() {

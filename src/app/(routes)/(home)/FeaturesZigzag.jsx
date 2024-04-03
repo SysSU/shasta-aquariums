@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 
-import FeatImage01 from '../../public/features-03-image-01.jpg';
-import FeatImage02 from '../../public/features-03-image-02.jpg';
-import FeatImage03 from '../../public/features-03-image-03.jpg';
-import FeatImage04 from '../../public/features-03-image-04.jpg';
+import FeatImage01 from '@/public/features-03-image-01.jpg';
+import FeatImage02 from '@/public/features-03-image-02.jpg';
+import FeatImage03 from '@/public/features-03-image-03.jpg';
+import FeatImage04 from '@/public/features-03-image-04.jpg';
 
 function FeaturesZigzag() {
   return (

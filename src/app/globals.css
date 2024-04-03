@@ -21,3 +21,15 @@
 [x-cloak=""] {
     display: none;
 }
+
+@layer base {
+    p a {
+      @apply text-purple-600;
+    }
+  }
+
+
+.menu li .active {
+    @apply bg-purple-400 !important;
+    @apply text-slate-950 !important;
+  }

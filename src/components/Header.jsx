@@ -1,52 +1,147 @@
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import LogoImg from '../../public/logo.png';
+import { usePathname, useParams } from 'next/navigation';
+import LogoImg from '@/public/logo.png';
 
-function Header() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+const menuItems = [
+  { name: 'Home', link: '/' },
+  { name: 'Setup Consultation', link: '/consultation' },
+  {
+    name: 'Special Services',
+    subMenu: [
+      { name: 'Fish-Less Cycle', link: '/fishless-cycle' },
+      { name: 'Neptune Apex Setup', link: '/apex-setup' },
+    ],
+  },
+];
 
-  const trigger = useRef(null);
-  const mobileNav = useRef(null);
+function MenuItems() {
+  const handleClick = () => {
+    const elements = document.getElementsByClassName('menuDetails');
+    if (elements) {
+      for (let element of elements) {
+        element.removeAttribute('open');
+      }
+    }
+  };
 
-  // close the mobile menu on click outside
+  const pathname = usePathname();
+  const params = useParams();
+  const [hash, setHash] = useState('');
+
   useEffect(() => {
-    const clickHandler = ({ target }) => {
-      if (!mobileNav.current || !trigger.current) return;
-      if (
-        !mobileNavOpen ||
-        mobileNav.current.contains(target) ||
-        trigger.current.contains(target)
-      )
-        return;
-      setMobileNavOpen(false);
-    };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
-  });
+    setHash(window.location.hash);
+  }, [params]);
 
-  // close the mobile menu if the esc key is pressed
-  useEffect(() => {
-    const keyHandler = ({ keyCode }) => {
-      if (!mobileNavOpen || keyCode !== 27) return;
-      setMobileNavOpen(false);
-    };
-    document.addEventListener('keydown', keyHandler);
-    return () => document.removeEventListener('keydown', keyHandler);
-  });
+  const defaultClasses = 'block ml-1 auto-cols-auto';
+
+  function MenuItem({ item, index, isSubMenu }) {
+    return (
+      <li key={item.link || index}>
+        {item.subMenu ? (
+          <details className="menuDetails ml-1">
+            <summary className="w-max">{item.name}</summary>
+            <ul className="p-2">
+              {item.subMenu.map((subItem, subIndex) => (
+                <MenuItem
+                  key={subItem.link || subIndex}
+                  item={subItem}
+                  isSubMenu={true}
+                />
+              ))}
+            </ul>
+          </details>
+        ) : (
+          <Link
+            href={item.link}
+            className={`${pathname === item.link && !hash ? 'active' : ''} ${isSubMenu ? 'w-max' : ''} ${defaultClasses}`}
+            aria-label="ShastaAquariums.com"
+            onClick={handleClick}
+          >
+            {item.name}
+          </Link>
+        )}
+      </li>
+    );
+  }
 
   return (
-    <header className="absolute w-full z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Site branding */}
-          <div className="shrink-0 mr-4">
-            {/* Logo */}
-            <Link href="/" className="block" aria-label="ShastaAquariums.com">
-              <Image src={LogoImg} alt="ShastaAquariums.com" width="200" />
-            </Link>
+    <>
+      {menuItems.map((item, index) => (
+        <MenuItem key={index} item={item} />
+      ))}
+    </>
+  );
+}
+
+function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+  const prevY = useRef(0); // Store previous scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const hideShowOffset = 100; // Offset value to hide/show element
+
+      // Hide element only when scrolled down past x amount of pixels
+      if (currentY >= hideShowOffset) {
+        setIsVisible(false);
+        // Show element again when scrolled up to top of x amount of pixels
+      } else if (currentY <= hideShowOffset) {
+        setIsVisible(true);
+      }
+
+      prevY.current = currentY; // Update previous scroll position
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll); // Cleanup
+  }, []);
+
+  return (
+    <header
+      className={`${!isVisible ? 'invisible' : ''} navbar fixed top-0 z-50`}
+    >
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost lg:invisible"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <MenuItems />
+          </ul>
         </div>
+        <Link href="/" className="block" aria-label="ShastaAquariums.com">
+          <Image src={LogoImg} alt="ShastaAquariums.com" width="150" priority />
+        </Link>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal bg-base-200 rounded-box dropdown-content">
+          <MenuItems />
+        </ul>
       </div>
     </header>
   );

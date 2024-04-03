@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwindForms from '@tailwindcss/forms';
+import daisyui from 'daisyui';
 
 const config: Config = {
   content: [
@@ -73,6 +74,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindForms],
+  plugins: [tailwindForms, daisyui],
 };
 export default config;
