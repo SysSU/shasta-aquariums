@@ -12,24 +12,25 @@
 
 /* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
 @layer utilities {
-    .rtl {
-        direction: rtl;
-    }
+  .rtl {
+    direction: rtl;
+  }
 }
 
 /* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
-[x-cloak=""] {
-    display: none;
+[x-cloak=''] {
+  display: none;
 }
 
 @layer base {
-    p a {
-      @apply text-purple-600;
-    }
+  p a {
+    @apply text-purple-600;
   }
+}
 
-
-.menu li .active {
-    @apply bg-purple-400 !important;
-    @apply text-slate-950 !important;
-  }
+.menu li > *:not(ul, .menu-title, details, .btn):active,
+.menu li > *:not(ul, .menu-title, details, .btn).active,
+.menu li > details > summary:active {
+  @apply bg-purple-400 !important;
+  @apply text-slate-950 !important;
+}

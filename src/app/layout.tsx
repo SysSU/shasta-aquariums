@@ -28,8 +28,10 @@ export default function RootLayout({
       <body
         className={`${inter.className} font-inter antialiased bg-gray-900 text-gray-200 tracking-tight`}
       >
+        <PageIllustration />
         <div className="flex flex-col min-h-screen overflow-hidden">
           <AOS />
+
           <Header />
           <div>
             <main className="grow pt-32 md:pt-40">
@@ -41,7 +43,6 @@ export default function RootLayout({
 
               {children}
             </main>
-            <PageIllustration />
           </div>
 
           <Footer />

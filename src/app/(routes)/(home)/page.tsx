@@ -3,7 +3,6 @@ import FeaturesBlocks from './FeaturesBlocks';
 import FeaturesZigZag from './FeaturesZigzag';
 import ConsultBlock from '@/components/ConsultBlock';
 import Banner from './Banner';
-import AOS from '@/components/AOS';
 import PageHero from '@/components/PageHero';
 import HeroImage from '@/public/hero-image.jpg';
 
@@ -18,7 +17,6 @@ const HeroDescription = () => (
 export default function Home() {
   return (
     <>
-      <AOS />
       <PageHero
         title={HeroTitle}
         description={<HeroDescription />}

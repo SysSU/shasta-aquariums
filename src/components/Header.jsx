@@ -2,9 +2,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import LogoImg from '@/public/logo.png';
-
 const menuItems = [
   { name: 'Home', link: '/' },
   { name: 'Setup Consultation', link: '/consultation' },
@@ -18,22 +17,7 @@ const menuItems = [
 ];
 
 function MenuItems() {
-  const handleClick = () => {
-    const elements = document.getElementsByClassName('menuDetails');
-    if (elements) {
-      for (let element of elements) {
-        element.removeAttribute('open');
-      }
-    }
-  };
-
   const pathname = usePathname();
-  const params = useParams();
-  const [hash, setHash] = useState('');
-
-  useEffect(() => {
-    setHash(window.location.hash);
-  }, [params]);
 
   const defaultClasses = 'block ml-1 auto-cols-auto';
 
@@ -56,9 +40,8 @@ function MenuItems() {
         ) : (
           <Link
             href={item.link}
-            className={`${pathname === item.link && !hash ? 'active' : ''} ${isSubMenu ? 'w-max' : ''} ${defaultClasses}`}
+            className={`${pathname === item.link ? 'active' : ''} ${isSubMenu ? 'w-max' : ''} ${defaultClasses}`}
             aria-label="ShastaAquariums.com"
-            onClick={handleClick}
           >
             {item.name}
           </Link>
@@ -128,7 +111,7 @@ function Header() {
             </svg>
           </div>
           <ul
-            tabIndex={0}
+            tabIndex="0"
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <MenuItems />
@@ -139,7 +122,10 @@ function Header() {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal bg-base-200 rounded-box dropdown-content">
+        <ul
+          tabIndex="0"
+          className="menu menu-horizontal bg-base-200 rounded-box dropdown-content"
+        >
           <MenuItems />
         </ul>
       </div>
