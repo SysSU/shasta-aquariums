@@ -5,7 +5,9 @@ import ConsultBlock from '@/components/ConsultBlock';
 import Banner from './Banner';
 import PageHero from '@/components/PageHero';
 import HeroImage from '@/public/hero-image.jpg';
+import { SetBreadCrumbComponent } from '@/context/BreadCrumbsContext';
 
+const breadCrumbs = [{ name: 'Home', href: '/' }];
 const HeroTitle = 'Shasta Aquarium Services';
 const HeroDescription = () => (
   <>
@@ -17,6 +19,7 @@ const HeroDescription = () => (
 export default function Home() {
   return (
     <>
+      <SetBreadCrumbComponent newBreadCrumbs={breadCrumbs} />
       <PageHero
         title={HeroTitle}
         description={<HeroDescription />}

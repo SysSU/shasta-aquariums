@@ -3,12 +3,19 @@ import type { Metadata } from 'next';
 import AOS from '@/components/AOS';
 import VideoPlayer from '@/components/VideoPlayer';
 import PageHero from '@/components/PageHero';
+import { SetBreadCrumbComponent } from '@/context/BreadCrumbsContext';
 
 export const metadata: Metadata = {
   title: 'ShastaAquariums.com - Redding, CA Fish-Less Tank Cycling',
   description:
     'Redding, CA Aquarium Fish-less cycling. Fish-less cycling is the process of establishing a beneficial bacteria colony in your aquarium filter media before adding fish. This process is essential for a healthy aquarium.',
 };
+
+const breadCrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Special Services', href: '/' },
+  { name: 'Fish-less Cycle', href: '/fishless-cycle' },
+];
 
 export default function Page() {
   const HeroTitle = 'Fish-Less Tank Cycling';
@@ -17,8 +24,10 @@ export default function Page() {
 
   return (
     <>
-      <PageHero title={HeroTitle} description={HeroDescription} />
       <AOS />
+      <SetBreadCrumbComponent newBreadCrumbs={breadCrumbs} />
+      <PageHero title={HeroTitle} description={HeroDescription} />
+
       <section>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="py-12 md:py-20 border-t border-gray-800">

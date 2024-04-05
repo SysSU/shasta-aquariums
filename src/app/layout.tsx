@@ -6,6 +6,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageIllustration from '@/components/PageIllustration';
 import AOS from '@/components/AOS';
+import BreadCrumbs from '@/components/BreadCrumbs';
+import { BreadcrumbDataContextProvider } from '@/context/BreadCrumbsContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,25 +30,26 @@ export default function RootLayout({
       <body
         className={`${inter.className} font-inter antialiased bg-gray-900 text-gray-200 tracking-tight`}
       >
-        <PageIllustration />
-        <div className="flex flex-col min-h-screen overflow-hidden">
-          <AOS />
+        <BreadcrumbDataContextProvider>
+          <PageIllustration />
+          <div className="flex flex-col min-h-screen overflow-hidden">
+            <AOS />
 
-          <Header />
-          <div>
-            <main className="grow pt-32 md:pt-40">
-              {/*  Page illustration */}
-              <div
-                className="relative max-w-6xl mx-auto h-0 pointer-events-none"
-                aria-hidden="true"
-              ></div>
+            <Header />
 
-              {children}
-            </main>
+            <div>
+              <main className="grow pt-16 md:pt-20">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
+                  <BreadCrumbs />
+                </div>
+
+                {children}
+              </main>
+            </div>
+
+            <Footer />
           </div>
-
-          <Footer />
-        </div>
+        </BreadcrumbDataContextProvider>
       </body>
     </html>
   );

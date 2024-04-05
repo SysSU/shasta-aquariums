@@ -7,6 +7,7 @@ import PageHero from '@/components/PageHero';
 import HeroImage from '@/public/apex-hero-img.jpg';
 import FeatImage01 from '@/public/apex-features-01.jpg';
 import FeatImage02 from '@/public/apex-features-02.jpg';
+import { SetBreadCrumbComponent } from '@/context/BreadCrumbsContext';
 
 export const metadata: Metadata = {
   title:
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
   description: 'Redding, CA professional Neptune Apex setup and configuration.',
 };
 
+const breadCrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Special Services', href: '/' },
+  { name: 'Neptune Apex Setup', href: '/apex-setup' },
+];
 export default function Page() {
   const HeroTitle =
     'Conquer Aquarium Care with Neptune Apex - Stress-Free Management Starts with Expert Setup';
@@ -33,6 +39,7 @@ export default function Page() {
   return (
     <>
       <AOS />
+      <SetBreadCrumbComponent newBreadCrumbs={breadCrumbs} />
       <PageHero
         title={HeroTitle}
         description={<HeroDescription />}
