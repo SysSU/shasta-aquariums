@@ -7,7 +7,7 @@ import PageHero from '@/components/PageHero';
 export const metadata: Metadata = {
   title: 'ShastaAquariums.com - Redding, CA Fish-Less Tank Cycling',
   description:
-    'Redding, CA Aquarium Cleaning Service. Crystal clear water & healthy fish. Professional aquarium maintenance for a stress-free experience.',
+    'Redding, CA Aquarium Fish-less cycling. Fish-less cycling is the process of establishing a beneficial bacteria colony in your aquarium filter media before adding fish. This process is essential for a healthy aquarium.',
 };
 
 export default function Page() {

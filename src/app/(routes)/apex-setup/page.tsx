@@ -9,9 +9,9 @@ import FeatImage01 from '@/public/apex-features-01.jpg';
 import FeatImage02 from '@/public/apex-features-02.jpg';
 
 export const metadata: Metadata = {
-  title: 'ShastaAquariums.com - Redding, CA Fish-Less Tank Cycling',
-  description:
-    'Redding, CA Aquarium Cleaning Service. Crystal clear water & healthy fish. Professional aquarium maintenance for a stress-free experience.',
+  title:
+    'ShastaAquariums.com - Redding, CA Neptune Apex Setup and Configuration',
+  description: 'Redding, CA professional Neptune Apex setup and configuration.',
 };
 
 export default function Page() {
