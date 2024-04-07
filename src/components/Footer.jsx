@@ -29,9 +29,7 @@ const socialLinkData = [
 
 function SocialLink({ href, iconData, label, comingSoon }) {
   const iconPaths = typeof iconData === 'string' ? [iconData] : iconData;
-  const handleClick = (e) => {
-    comingSoon && e.preventDefault();
-  };
+
   return (
     <li className="ml-1">
       <div

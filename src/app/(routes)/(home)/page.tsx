@@ -7,7 +7,7 @@ import PageHero from '@/components/PageHero';
 import HeroImage from '@/public/hero-image.jpg';
 import { SetBreadCrumbComponent } from '@/context/BreadCrumbsContext';
 
-const breadCrumbs = [{ name: 'Home', href: '/' }];
+const breadCrumbs = null;
 const HeroTitle = 'Shasta Aquarium Services';
 const HeroDescription = () => (
   <>

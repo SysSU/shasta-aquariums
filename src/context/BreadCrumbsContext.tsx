@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import React from 'react';
 
 type BreadCrumbType = {
@@ -8,7 +8,7 @@ type BreadCrumbType = {
 };
 
 type BreadCrumbContext = {
-  breadCrumbs?: BreadCrumbType[];
+  breadCrumbs?: BreadCrumbType[] | null;
   setBreadCrumbs?: any;
 };
 
@@ -19,7 +19,7 @@ function BreadcrumbDataContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [breadCrumbs, setBreadCrumbs] = useState([{ name: 'Home', href: '/' }]);
+  const [breadCrumbs, setBreadCrumbs] = useState(null);
   return (
     <BreadcrumbDataContext.Provider value={{ breadCrumbs, setBreadCrumbs }}>
       {children}
@@ -30,11 +30,18 @@ function BreadcrumbDataContextProvider({
 function SetBreadCrumbComponent({
   newBreadCrumbs,
 }: {
-  newBreadCrumbs: BreadCrumbType[];
+  newBreadCrumbs: BreadCrumbType[] | null;
 }) {
   const { setBreadCrumbs } = React.useContext(BreadcrumbDataContext);
-  setBreadCrumbs(newBreadCrumbs);
-  return null;
+
+  useEffect(() => {
+    setBreadCrumbs(newBreadCrumbs);
+    return () => {
+      setBreadCrumbs(null);
+    };
+  }, []);
+
+  return <></>;
 }
 
 export {

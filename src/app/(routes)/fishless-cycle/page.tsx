@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import AOS from '@/components/AOS';
 import VideoPlayer from '@/components/VideoPlayer';
 import PageHero from '@/components/PageHero';
 import { SetBreadCrumbComponent } from '@/context/BreadCrumbsContext';
@@ -24,7 +23,6 @@ export default function Page() {
 
   return (
     <>
-      <AOS />
       <SetBreadCrumbComponent newBreadCrumbs={breadCrumbs} />
       <PageHero title={HeroTitle} description={HeroDescription} />
 
