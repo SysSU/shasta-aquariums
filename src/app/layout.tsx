@@ -35,11 +35,10 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen overflow-hidden">
             <AOS />
 
-            <Header />
-
             <div>
-              <main className="grow pt-16 md:pt-20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
+              <main className="grow pt-20 md:pt-24">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 md:pb-16">
+                  <Header />
                   <BreadCrumbs />
                 </div>
 

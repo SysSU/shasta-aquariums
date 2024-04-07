@@ -34,3 +34,17 @@
   @apply bg-purple-400 !important;
   @apply text-slate-950 !important;
 }
+
+.breadcrumbs {
+  @apply text-slate-950;
+}
+
+.breadcrumbs a {
+  @apply text-slate-400;
+  @apply font-normal;
+}
+
+.breadcrumbs a:hover {
+  @apply text-slate-300;
+  text-decoration: none !important;
+}

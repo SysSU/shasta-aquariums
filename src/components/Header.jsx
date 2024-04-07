@@ -86,15 +86,11 @@ function Header() {
 
   return (
     <header
-      className={`${!isVisible ? 'invisible' : ''} navbar fixed top-0 z-50`}
+      className={`${!isVisible ? 'invisible' : ''} navbar max-w-6xl mx-auto fixed top-0 z-50`}
     >
       <div className="navbar-start">
-        <div className="dropdown">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost lg:invisible"
-          >
+        <div className="dropdown lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
