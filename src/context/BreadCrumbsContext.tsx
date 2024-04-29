@@ -39,7 +39,7 @@ function SetBreadCrumbComponent({
     return () => {
       setBreadCrumbs(null);
     };
-  }, []);
+  });
 
   return <></>;
 }

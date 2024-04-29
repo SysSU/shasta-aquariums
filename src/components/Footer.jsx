@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const socialLinkData = [
+export const socialLinkData = [
   {
     href: '#',
     comingSoon: true,
@@ -31,7 +31,7 @@ function SocialLink({ href, iconData, label, comingSoon }) {
   const iconPaths = typeof iconData === 'string' ? [iconData] : iconData;
 
   return (
-    <li className="ml-1">
+    <li className="ml-1" id={`socialLink-${label}`}>
       <div
         className={`${comingSoon ? 'tooltip' : ''}`}
         data-tip={`${comingSoon ? 'Coming Soon' : ''}`}

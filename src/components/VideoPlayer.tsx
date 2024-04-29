@@ -17,7 +17,12 @@ export default function VideoPlayer({ url }: { url: string }) {
 
   return (
     <>
-      <ReactPlayer lassName="h-full w-full" url={url} width="auto" />
+      <ReactPlayer
+        className="h-full w-full"
+        url={url}
+        width="auto"
+        id="videoPlayer"
+      />
     </>
   );
 }

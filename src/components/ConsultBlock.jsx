@@ -19,6 +19,10 @@ function ConsultBlock() {
         } else {
           setSubmitStatus('Failed');
         }
+      })
+      .catch((err) => {
+        console.log(err);
+        setSubmitStatus('Failed');
       });
   }
 
@@ -74,22 +78,31 @@ function ConsultBlock() {
                       : false
                   }
                 >
-                  Send
+                  {submitStatus === 'Pending' ? 'Sending...' : 'Submit'}
                 </button>
               </div>
               {/* Success/failure message */}
               {submitStatus === 'Pending' && (
-                <p className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">
+                <p
+                  className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm"
+                  id="pendingMessage"
+                >
                   Sending please wait!
                 </p>
               )}
               {submitStatus === 'Success' && (
-                <p className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">
+                <p
+                  className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm"
+                  id="successMessage"
+                >
                   Thanks, we will get in touch with you soon!
                 </p>
               )}
-              {submitStatus === 'Failure' && (
-                <p className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm text-red-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+              {submitStatus === 'Failed' && (
+                <p
+                  className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm text-red-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+                  id="errorMessage"
+                >
                   Something wrong happened, you can try to submit again!
                 </p>
               )}

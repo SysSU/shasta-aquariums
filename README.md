@@ -2,6 +2,7 @@ This is the source code for [ShastaAquariums.com](https://shastaaquariums.com/).
 
 - [Project setup](#project-setup)
   - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
+  - [Unit Tests](#unit-tests)
   - [Perform Lint](#perform-lint)
   - [Env Variables](#env-variables)
 - [Deploy on Vercel](#deploy-on-vercel)
@@ -19,6 +20,13 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Unit Tests
+Unit tests are ran using Cypress Component testing. 
+
+To run the tests use `pnpm cypress:runComponent`
+
+To open Cypress use `pnpm cypress:open`
 
 ## Perform Lint
 ```

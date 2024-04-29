@@ -18,9 +18,11 @@ export default function PageHero({
             <h1 className="h1 mb-4" data-aos="fade-up">
               {title}
             </h1>
-            <p className="text-lg" data-aos="fade-up" data-aos-delay="150">
-              {description}
-            </p>
+            {description && (
+              <p className="text-lg" data-aos="fade-up" data-aos-delay="150">
+                {description}
+              </p>
+            )}
           </div>
 
           {/* Hero image */}

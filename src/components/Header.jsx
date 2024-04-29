@@ -88,7 +88,7 @@ function Header() {
     <header
       className={`${!isVisible ? 'invisible' : ''} navbar max-w-6xl mx-auto fixed top-0 z-50`}
     >
-      <div className="navbar-start">
+      <nav className="navbar-start">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost">
             <svg
@@ -116,15 +116,15 @@ function Header() {
         <Link href="/" className="block" aria-label="ShastaAquariums.com">
           <Image src={LogoImg} alt="ShastaAquariums.com" width="150" priority />
         </Link>
-      </div>
-      <div className="navbar-center hidden lg:flex">
+      </nav>
+      <nav className="navbar-center hidden lg:flex">
         <ul
           tabIndex="0"
           className="menu menu-horizontal bg-base-200 rounded-box dropdown-content"
         >
           <MenuItems />
         </ul>
-      </div>
+      </nav>
     </header>
   );
 }

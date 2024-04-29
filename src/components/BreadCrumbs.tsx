@@ -14,7 +14,7 @@ export default function BreadCrumbs() {
       <ul className="bg-purple-500/50 w-fit p-2 rounded-md">
         {breadCrumbs &&
           breadCrumbs.map((breadCrumb, index) => (
-            <li key={index}>
+            <li key={index} className="breadCrumbs">
               <Link href={breadCrumb.href}>{breadCrumb.name}</Link>
             </li>
           ))}
