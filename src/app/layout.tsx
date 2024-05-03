@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import 'aos/dist/aos.css';
@@ -49,6 +50,11 @@ export default function RootLayout({
             <Footer />
           </div>
         </BreadcrumbDataContextProvider>
+        <Script
+          defer
+          data-domain="shastaaquariums.com"
+          src="https://plausible.syssu.com/js/script.js"
+        />
       </body>
     </html>
   );
