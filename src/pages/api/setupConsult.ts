@@ -52,10 +52,10 @@ export default async function handler(
       text: `New Consult Request From ${name}: ${phone}`,
     })
     .then(() => {
-      return res.status(400).json({ results: 'Success' });
+      return res.status(200).json({ results: 'Success' });
     })
     .catch((err) => {
       console.error(err);
-      return res.status(200).json({ results: 'Error' });
+      return res.status(400).json({ results: 'Error' });
     });
 }
